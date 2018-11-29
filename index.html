@@ -32,8 +32,34 @@
 
     <hr>
     <div class="container">
-
+        <button onclick="tikla('Ahanda tıkladın')" >Buraya Tıkla</button>
     </div>
+    <hr>
+    <div class="container">
+        <!--Bulunan tag HTML'in içeriğini değiştirebiliyoruz.-->
+        <button onclick="this.innerHTML='Tıkladın'">Buraya Tıkla</button>
+    </div>
+    <hr>
+    <div class="container">
+        <!--tikla fonksuyonuna bu butonun id'sini (elementini) gönderiyoruz-->
+        <button onclick="tiklaButton(this)">Buraya Tıkla</button>
+    </div>
+    <hr>
+    <div class="container">
+        <p id="para1">Paragraf 1</p>
+    
+        <button onclick="renkDegistir()">Buraya Tıkla</button>
+    </div>
+    <hr>
+    <div class="container">
+        <form name="form1" action="gonder.php" method="POST" onsubmit="return dogrula()">
+            <input type="text" name ="isim"/>
+            
+            <!--Butonu tıklandığında onsubmit şeklnde bir event tetikleniyor-->
+            <button type="submit">Gonder</button>
+        </form>
+    </div>
+    <hr>
     <!--Javascript'i body tag'inin en altına yazılır çünkü diğer tagleride js'de kullanıcağımız için diğer tag'lerin düzgün bir şekilde yüklenmesinden emin olmamız gerekir. -->
 
     <script>
@@ -48,9 +74,189 @@
 
         array[4]="PHP";
 
-        alert(array[4]);
+        //alert(array[4]);
 
+        for (var i = 0; i<array.length; i++)
+        {
+            //console.log(array[i]);
+        }
+
+        console.log("While Döngüsü");
+
+        i=0;
+        while(i<100){
+            //console.log(i);
+
+            i++;
+            i++;
+        }
+
+        console.log("Foreach");
+
+        var sayilar = [32,5,1,100,-8,90];
         
+
+        sayilar.forEach(function(sayi){
+            console.log("Elemanlar: " + sayi);
+        });
+
+        if(sayilar[0]!=sayilar[1])
+        {
+            console.log("AAAA "+sayilar[0]+ " ve "+sayilar[1]+" eşit değilmiş.");
+        }
+        
+        var a = "32";
+
+        if(sayilar[0]==a)
+        {
+            console.log("Eşit.");
+        }
+
+        if(sayilar[0]===a)
+        {
+            console.log("Eşit.");
+        }else
+        {
+            console.log("Eşit değil.");
+        }
+
+        if(sayilar[0]===a)
+        {
+            console.log("Eşit.");
+        }else if(sayilar[0]!=a)
+        {
+            console.log("Eşit değil.");
+        }
+
+        if(sayilar[0]==a || sayilar[0]===a)
+        {
+            console.log("Or operatörü.");
+        }
+
+        if(1==1 && sayilar[0]==a)
+        {
+            console.log("And operatörü.");
+        }
+        
+        function getSevinc(){
+            console.log("İlk javascript fonksiyonum, yaşasın.");
+        }
+
+        getSevinc();
+
+        //parameterelerin değer tipini belirtmemize gerek yoktur çünkü
+        //değer tipleri dinamik olarak belirleniyor.
+        function p(metin){
+            console.log(metin)
+        }
+
+        p("sdfsdsdgsdsdgsdgsdfsdf")
+        p(2)
+
+        function toplama(a,b,c){
+            return a + b + c;
+        }
+
+        p("Toplamları : "+ toplama(10,10,10))
+
+        //Javascript'te OBJE oluşturma
+        //JS Object Base bir programla dilidir. Bu objeclerde inheritance'lık veya polimorfizim gibi bir özellik yoktur.
+        //Sanılanın aksine Obje yönelimli (Object Oriented) bir programlam dili değildir.
+        var calisan={
+            isim: "Osman Emre",
+            soyisim: "Erkmen",
+            id: 123456,
+            diller: ["plsql","c#","javascript"],
+            adres: {
+                mah:"incirtepe",
+                cad:"okurlar",
+                no:"77/A",
+                daire:"65",
+            },
+            //Obje içinde fonksiyonun tanımlanmsı 
+            kimlikBilgileri: function () {
+                return this.isim+" "+this.soyisim+" "+this.id 
+            }
+        }
+        
+        p(calisan.isim);
+        p(calisan.soyisim);
+        p(calisan.diller[1]);
+        p(calisan.adres);
+        p(calisan.adres.cad);
+        p(calisan.kimlikBilgileri())
+
+        //Farklı bir biçimde obje tanımlama
+        var isci = new Object();
+
+        isci.isim = "Abdulkadir"
+        isci.soyisim = "Karagöbek"
+        isci.id = "000000"
+        isci.kütükBilgisi = function () {
+            return this.isim+ " " +this.soyisim+ " " +this.id  
+        }
+        isci.calisan=calisan
+
+        p(isci.isim);
+        p(isci.soyisim)
+        p(isci.kütükBilgisi())
+        p(isci.calisan.isim)
+
+        //Constructer func.   / Constructer Pattern
+
+        function Calisan(isim,soyisim,id) {
+            this.isim = isim
+            this.soyisim = soyisim
+            this.id = id
+            this.kafaKağıdı= function () {
+                return this.isim+ "\n"+this.soyisim+ "\n" +this.id 
+            }
+        }
+
+        //Şimdide bu constructer'dan üretilen bir obje tanımlayalım.
+        var calisan1=new Calisan("Berkecan","Tokmaklıoğulları",111111)
+        p(calisan1.kafaKağıdı())
+        var calisan2=new Calisan("Ahmet","Mehmet",222222)
+        p(calisan2.kafaKağıdı())
+
+        //Javascript Event'leri
+        function tikla(metin) {
+            alert(metin)
+            p(metin)
+        }
+
+        function tiklaButton(element) {
+            element.innerHTML="Element"
+        }
+
+        function renkDegistir() {
+            //id'si para1 olan elemnti seçmek için.
+            var element = document.getElementById("para1")
+            
+
+            if (element.style.color=="red")
+            {
+                element.style.color="blue"
+            }
+            else 
+            {
+                element.style.color="red"
+            }
+        }
+        
+        //Form doğrulama işlemleri
+        function dogrula() {
+            var form=document.forms["form1"];
+            var deger=form["isim"].value;
+
+            if (deger == "")
+            {
+                alert("İsim alanı boş olamaz.");
+                return false;
+            }
+
+            return true;
+        }
     </script>
 
 </body>
