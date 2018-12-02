@@ -12,7 +12,7 @@ http.createServer(function(request,response){
     //client'a ne vereceğimizi aşağıdaki şekilde tanımlıyoruz.--Çalıştırmak için alttaki, kodun olması yeterli.
     if (request.url=="/admin"){
         response.writeHead(200,{'Content-Type':'text/html'});
-        response.write('<html><body><strong>ADMIN SAYFASI</strong></body></html>');
+        response.write('<html><body><strong>ADMIN</strong></body></html>');
     }else if (request.url=="/"){//ana sayfayı temsil ediyor.
         response.writeHead(200,{'Content-Type':'text/html'});
         response.write('<html><body><strong>ANA SAYFA</strong></body></html>');
