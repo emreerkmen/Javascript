@@ -2,7 +2,10 @@ var fs = require('fs');
 var p = require('./exportsDemo.js');
 var express = require('express');
 var path=require('path');
-var ctrlElektronik = require('./elektronikController');
+
+//var ctrlElektronik = require('./elektronikController');
+var elektronikRouter = require('./app_server/router/elektronikRouter.js');
+
 
 var app = express();
 
@@ -26,10 +29,10 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 //     res.sendFile(path.join(__dirname, 'admin.html'));
 // };
 
-app.get('/',ctrlElektronik.homeController);
+//app.get('/',ctrlElektronik.homeController);
 
-app.get('/admin',ctrlElektronik.adminController);
+//pp.get('/admin',ctrlElektronik.adminController);
 
-
+app.use('/home',elektronikRouter);
 
 app.listen(8080);
