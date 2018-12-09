@@ -33,6 +33,16 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 
 //pp.get('/admin',ctrlElektronik.adminController);
 
+//Basit olarak her middleware request ve response üzerinde işleme yapan küçük ara yazılımlar gibi düşünülebilir.
+app.use(function(req,res,next){//middleware--burda her router da çalışıcak mesela. Router'ın içine yazarak router bazlı çalışabilirsiniz.
+    p('İlk çağırılan middleware;Ana module');
+    p("url...."+req.originalUrl);
+    p("time..."+Date.now());
+    next();//sonraki ara yazılımın çağrılmasını sağlıyor.
+})
+//Expresss içinde gömülü bir adet module var o da static moldule'dür.
+//Üçüncü parti middleware'lar vardır.
+
 app.use('/home',elektronikRouter);
 
 app.listen(8080);
