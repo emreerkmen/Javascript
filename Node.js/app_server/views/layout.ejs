@@ -1,0 +1,25 @@
+<html>
+
+<link rel='stylesheet' href="/public/css/style.css">
+
+<link rel='stylesheet' href="/public/css/bootstrap.css">
+
+<link rel='stylesheet' href="/public/css/bootstrap-grid.css">
+
+<body>
+    <strong>ANA SAYFA</strong>
+
+    <h1 class="layout">EJS ŞABLON BAŞLIK</h1>
+    <div class="container">
+        <%- body%>
+    </div>
+    <h2 class="layout"> EJS ALT ŞABLON</h2>
+
+    <!--Bootstrap'in js'i Jquery'yr bağlı o yüzden ilk önce jquery'nin js'ni yüklüyoruz.
+    Bir diğer sebep ise web sayfasının daha hızlı yüklenmesi için. Web sayfasını ilk açıldığnda css ler yüklencek daha sonra sayfa gelicek ve sayfa gelirken js ler yüklencek.-->
+    <script type="application/javascript" src="/public/js/jquery-3.3.1.min.js"></script>
+
+    <script type="application/javascript" src="/public/js/bootstrap.js"></script>
+
+</body>
+</html>
