@@ -1,9 +1,9 @@
-<html>
-<link rel='stylesheet' href="/public/css/style.css">
 
-<body><strong>ANA SAYFA</strong></body>
-<p class="DenemeBuyuk">
-    Oleyyyyyyyyyy
-</p>
+<div class="row homeheader"><%= mesaj%></div>
+<div class="row">
+<% for(var i=0;i<kisiler.length;i++){ %>
+    <div class="col-sm-3 home"><%=kisiler[i]%></div>
+<% } %>
+</div>
 
-</html> 
+

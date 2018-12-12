@@ -1,4 +1,20 @@
-.DenemeBuyuk{
-    font-size: xx-small;
-    background: chartreuse;
+.layout{
+    font-size: xx-large;
+    background: rgb(247, 112, 2);
+}
+
+.admin{
+    font-size: xx-large;
+    background: rgb(22, 247, 2);
+}
+
+.home{
+    border: 2px;
+    border-color: aliceblue;
+    background-color: rgb(72, 56, 209);
+}
+
+.homeheader{
+    font-size: 22px;
+    background: rgb(2, 247, 14);
 }
