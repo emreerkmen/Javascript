@@ -33,6 +33,9 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 
 //pp.get('/admin',ctrlElektronik.adminController);
 
+app.set('view engine','ejs');
+app.set('views', path.join(__dirname,'./app_server/views'));
+
 //Basit olarak her middleware request ve response üzerinde işleme yapan küçük ara yazılımlar gibi düşünülebilir.
 app.use(function(req,res,next){//middleware--burda her router da çalışıcak mesela. Router'ın içine yazarak router bazlı çalışabilirsiniz.
     p('İlk çağırılan middleware;Ana module');
