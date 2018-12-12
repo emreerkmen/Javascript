@@ -9,6 +9,12 @@
 }
 
 .home{
+    border: 2px;
+    border-color: aliceblue;
+    background-color: rgb(72, 56, 209);
+}
+
+.homeheader{
     font-size: 22px;
-    background: rgb(26, 2, 247);
+    background: rgb(2, 247, 14);
 }
