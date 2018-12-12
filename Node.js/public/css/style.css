@@ -9,9 +9,10 @@
 }
 
 .home{
-    border: 2px;
-    border-color: aliceblue;
-    background-color: rgb(72, 56, 209);
+    border: 10px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    margin: 1px;
 }
 
 .homeheader{
