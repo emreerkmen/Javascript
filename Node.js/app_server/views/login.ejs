@@ -4,7 +4,7 @@
         <div class="card-header">Login</div>
         <div class="card-body">
             <h5 class="card-title">Login Info</h5>
-            <form>
+            <form action="/login" method="POST">
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -30,7 +30,12 @@
             </form>
         </div>
         <div class="card-footer">
-            FREE!!!!!
+            <%if(typeof username!='undefined'){%>
+            <p><%=username%></p>
+            <%}%>
+            <%if(typeof password!='undefined'){%>
+            <h2><%=password%></h2>
+            <%}%>
         </div>
         </div>
     </div>

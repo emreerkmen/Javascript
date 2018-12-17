@@ -4,6 +4,7 @@ var path = require('path');
 var ejslayouts = require('express-ejs-layouts');
 var routeElektronik = require('./elektronikRouter');
 var routeLogin = require('./loginRouter');
+var bodyParser = require('body-parser');
 
 
 module.exports = function (app) {
@@ -16,7 +17,12 @@ module.exports = function (app) {
         p("time..." + Date.now());
         p("-----------------------------------");
         next();//sonraki ara yazılımın çağrılmasını sağlıyor.
-    })
+    });
+
+    //request'i parse edicez
+    app.use(bodyParser.urlencoded({ extended: false}));
+    app.use(bodyParser.json());
+
 
     // var homeController = function(req,res){
     //     // fs.readFile('home.html', function (err, data) {
