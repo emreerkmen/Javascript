@@ -57,6 +57,8 @@ module.exports = function (app) {
     //Üçüncü parti middleware'lar vardır.
 
     //EJS MVC'de controller ile view arasında bağlantı kuran module'dür. EJS bir view engine'dir(Görüntü Motoru).
+    //MongoDb ile node.js uygulaması tcp/ip socketleri üzernden haberleşir. Bu haberleşmeyi kod ile yazmak büyük amelelik olur
+    //Bununu bizim yerimize sağlayan module var; Mongoose
 
 
 
