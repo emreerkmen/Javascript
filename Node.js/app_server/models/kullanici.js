@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var kullanıcıSchema = new Schema({
     ad:String,
     soyad:String,
-    kullanıcıAdi: {type: String, required: true, unique: true},
+    kullanıcıAdi: {type: 'String', required: true, unique: true},
     sifre: {type: String, required: true}
 
 });

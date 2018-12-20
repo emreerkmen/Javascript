@@ -20,7 +20,7 @@ var yeniKullanici = new Kullanici({
     soyad: 'erkmen',
     kullanıcıAdi: 'emreerkmen1',
     sifre: '123456'
-},{collection:'kullanici'});
+});
 
 yeniKullanici.save(function(err){
     if(err){
