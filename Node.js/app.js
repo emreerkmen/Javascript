@@ -15,7 +15,7 @@ require('./app_server/router/routerManager.js')(app);
 
 var Kullanici = require('./app_server/models/kullanici');
 
-var yeniKullanici = new Kullanici({
+/*var yeniKullanici = new Kullanici({
     ad: 'emre',
     soyad: 'erkmen',
     kullanıcıAdi: 'emreerkmen1',
@@ -28,6 +28,6 @@ yeniKullanici.save(function(err){
     }else {
         console.log('kullanici kaydedildi');
     }
-})
+});*/
 
 app.listen(8080);

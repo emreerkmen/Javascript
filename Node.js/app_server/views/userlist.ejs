@@ -1,0 +1,29 @@
+<div class="contanier">
+    <h1>Kullanıcı Listesi</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">#</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Soyad</th>
+                <th scope="col">Kullanıcı Adı</th>
+                <th scope="col">Şifre</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <%for(var i=0;i<kullanicilar.length;i++){%>
+            <tbody>
+                <tr>
+                    <th scope="row"><%=i+1%></th>
+                    <td><%=kullanicilar[i].ad%></td>
+                    <td><%=kullanicilar[i].soyad%></td>
+                    <td><%=kullanicilar[i].kullaniciAdi%></td>
+                    <td><%=kullanicilar[i].sifre%></td>
+                    <td><%=kullanicilar[i].email%></td>
+                    <td><a class="btn btn-danger" href='/login/userDelete/<%=kullanicilar[i]._id%>'>Delete</a></td>
+                </tr>
+            </tbody>
+        <%}%>
+    </table>
+</div>

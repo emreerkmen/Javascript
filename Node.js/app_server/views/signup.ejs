@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card text-black bg-white text-center" style="width: 320px">
-        <div class="card-header">Login</div>
+        <div class="card-header">Sign Up</div>
         <div class="card-body">
-            <h5 class="card-title">Login Info</h5>
-            <form action="/login" method="POST">
+            <h5 class="card-title">User Info</h5>
+            <form action="/login/signup" method="POST">
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -24,29 +24,38 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                            <span class="input-group-text"><i class="fas fa-address-card"></i></span>
                         </div>
-                        <input id="name" type="text" class="form-control" name="name" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="name" type="text" class="form-control" name="name" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+                            <span class="input-group-text"><i class="far fa-address-card"></i></span>
                         </div>
-                        <input id="surname" type="text" class="form-control" name="surname" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="surname" type="text" class="form-control" name="surname" placeholder="Surname" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-at"></i></span>
+                        </div>
+                        <input id="email" type="text" class="form-control" name="email" placeholder="example@hotmail.com" aria-label="Email" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <a class="btn btn-success">Save</a>
+                        <button class="btn btn-success">Save</button>
+                        <a class="btn btn-light" href='/login'>Login in</a>
                     </div>
                 </div>
             </form>
         </div>
         <div class="card-footer">
-            <%if(typeof username!='undefined'){%>
-            <p><%=username%></p>
+            <%if(typeof mongoDbResult!='undefined'){%>
+            <p><%=mongoDbResult%></p>
             <%}%>
             <%if(typeof password!='undefined'){%>
             <h2><%=password%></h2>
