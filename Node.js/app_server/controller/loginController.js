@@ -51,23 +51,23 @@ module.exports.signupPost = function (req, res) {
     ;
 };
 
-module.exports.userListesi = function(req, res){
-    Kullanici.find(function(err,result){
+module.exports.userListesi = function (req, res) {
+    Kullanici.find(function (err, result) {
         //console.log(result);
-        res.render('userlist',{kullanicilar: result});
+        res.render('userlist', { kullanicilar: result });
     });
 }
 
-module.exports.userDelete = function(req, res){
+module.exports.userDelete = function (req, res) {
     console.log(req.params.userid);
-    Kullanici.findOneAndDelete({_id:req.params.userid},function(err,result){
-        if(err){
-            console.log('Silemedik, Hata: '+err);
+    Kullanici.findOneAndDelete({ _id: req.params.userid }, function (err, result) {
+        if (err) {
+            console.log('Silemedik, Hata: ' + err);
         }
         console.log(result);
         console.log('Başarıyla Silindi.');
         res.redirect('/login/userlist');
-        
+
     })
-    
+
 }
