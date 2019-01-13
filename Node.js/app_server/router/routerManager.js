@@ -10,14 +10,14 @@ var bodyParser = require('body-parser');
 module.exports = function (app) {
 
     //Basit olarak her middleware request ve response üzerinde işleme yapan küçük ara yazılımlar gibi düşünülebilir.
-    app.use(function (req, res, next) {//middleware--burda her router da çalışıcak mesela. Router'ın içine yazarak router bazlı çalışabilirsiniz.
+    /*app.use(function (req, res, next) {//middleware--burda her router da çalışıcak mesela. Router'ın içine yazarak router bazlı çalışabilirsiniz.
         p("-----------------------------------");
         p('İlk çağırılan middleware;Ana module');
         p("url...." + req.originalUrl);
         p("time..." + Date.now());
         p("-----------------------------------");
         next();//sonraki ara yazılımın çağrılmasını sağlıyor.
-    });
+    });*/
 
     //request'i parse edicez
     app.use(bodyParser.urlencoded({ extended: false}));
@@ -44,7 +44,7 @@ module.exports = function (app) {
 
     //app.get('/',ctrlElektronik.homeController);
 
-    //pp.get('/admin',ctrlElektronik.adminController);
+    //app.get('/admin',ctrlElektronik.adminController);
 
     //Hangi görüntü motorunu kullandığımızı belirtiyoruz.
     app.set('view engine', 'ejs');

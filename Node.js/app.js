@@ -3,11 +3,19 @@ var p = require('./exportsDemo.js');
 var express = require('express');
 var path = require('path');
 var db=require('./app_server/models/db');
+var http =require('http');
 
 
 
+http.createServer(function(req,res){
+    res.writeHead(200);
+    res.write("Hello");
+    res.end();
+    p(res);
+}).listen(8081);
 
 var app = express();
+
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
